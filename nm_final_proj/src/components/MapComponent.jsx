@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap, Circle, useMapEvents } 
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-// Fix for default marker icon
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
@@ -67,7 +66,6 @@ const MapComponent = ({ trashCans, onSelectTrashCan, selectedTrashCan, onAddTras
         [onAddingLocationChange],
     );
 
-    // Custom User Icon
     const UserIcon = L.icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -87,7 +85,6 @@ const MapComponent = ({ trashCans, onSelectTrashCan, selectedTrashCan, onAddTras
         });
     }, [userLocation, trashCans, showRadius]);
 
-    // Component to handle map actions that require useMap
     const MapControls = () => {
         const map = useMap();
 
@@ -102,7 +99,7 @@ const MapComponent = ({ trashCans, onSelectTrashCan, selectedTrashCan, onAddTras
             onAddTrashCan(center);
         };
 
-        if (isAddingMode) return null; // Hide controls when adding
+        if (isAddingMode) return null;
 
         return (
             <div

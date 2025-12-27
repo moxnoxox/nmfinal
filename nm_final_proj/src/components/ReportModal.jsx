@@ -8,11 +8,9 @@ const ReportModal = ({ isOpen, onClose, trashCanId }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate API call
         console.log(`Report submitted for trash can ${trashCanId}:`, { issueType, description });
         alert('Thank you! Your report has been submitted.');
         onClose();
-        // Reset form
         setIssueType('usage');
         setDescription('');
     };
